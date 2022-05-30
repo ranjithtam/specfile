@@ -10,6 +10,6 @@ GRPURL="https://github.com/fullstorydev/grpcurl/archive/refs/tags/v${VERSION}.ta
 
 $wget ${SPECURL}
 $wget ${GRPURL}
-$rpmbld -ba --define \\"grpcurlver ${VERSION}\\" grpcurl.spec
+$rpmbld -ba --define "grpcurlver ${VERSION}" grpcurl.spec
 $sshk us201 >> /home/builder/.ssh/known_hosts
 cd /home/builder/rpm/x86_64 && $curl --insecure -u ranjith:must0xLogan -T *.rpm sftp://us201/garage/ranjith/
